@@ -61,7 +61,7 @@ class SQLite:
         self.cursor.execute(f"INSERT INTO rooms (user_id, username) VALUES (?, ?)", (user_id, datetime.now()))
         self.database.commit()
 
-    def add_new_room(self, room_id):
+    def add_new_room(self, room_id, first_user_id, second_user_id):
         self.cursor.executor(f"INSERT INTO rooms (`room_id`, `first_user_id`, `second_user_id`, `started`) VALUES (?,?,?,?)",
                             (room_id, first_user_id, second_user_id, datetime.now()))
         self.database.commit()
