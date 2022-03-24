@@ -53,7 +53,7 @@ async def exit(message: types.Message):
         else:
             await message.answer('Вы уже общаетесь')
 
-@dp.message_handler(commands=['stop_chat'])
+@dp.message_handler(commands=['stop'])
 async def stop_chating(message: types.Message):
     room_id = db.get_user_id_room(message.from_user.id)
     if room_id is not None:
