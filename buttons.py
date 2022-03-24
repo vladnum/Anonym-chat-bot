@@ -1,14 +1,14 @@
-import asyncio
-from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-async def keyboard(data, message=None):
+
+async def keyboard(data):
     if data == 'start':
         keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
         button1 = KeyboardButton('Личный кабинет')
         button2 = KeyboardButton('Найти собеседника')
-        # button3 = KeyboardButton('Поддержка')
-        keyboard.add(button1).add(button2)  # .add(button3)
-    
+        button3 = KeyboardButton('Поддержка')
+        keyboard.add(button1).add(button2).add(button3)
+
     # В следующих версиях добавить админ панель
 
     elif data == 'cancel':

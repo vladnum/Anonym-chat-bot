@@ -1,6 +1,7 @@
 import sqlite3
 from datetime import datetime
 
+
 class SQLite:
     # Conect to the DB
     def __init__(self):
